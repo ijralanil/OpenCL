@@ -101,10 +101,10 @@ int main()
 	}
 
 
-	size_t global[2]= {100};					//1D work dimension,
-	//size_t local[2]= {2,2};						//total 				
+	size_t global[1]= {1};					//1D work dimension,
+	//size_t local[2]= {1,1};				//total 				
 
-	err = clEnqueueNDRangeKernel(CL.queue,CL.kernel,2,NULL,global,local,NULL,NULL,NULL);
+	err = clEnqueueNDRangeKernel(CL.queue,CL.kernel,1,NULL,global,NULL,NULL,NULL,NULL);
 	if(err!=CL_SUCCESS)
 	{
 		cout<<"could not set kernel argument : ";find_error(err);Sleep(5000);return 1;
